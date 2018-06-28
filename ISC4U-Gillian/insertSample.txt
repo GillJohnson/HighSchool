@@ -1,0 +1,7 @@
+public void insertSample(Sample rockSample) {
+
+	int index;
+	index = rockHash(rockSample.rockType);
+	allSamples[index] = rockSample;
+
+}

@@ -1,0 +1,10 @@
+private void replaceValue (RandomAccessFile f, int position, int newValue) {
+	
+	int filePointer = f.RECORD_SIZE * (position - 1);
+	f.seek(filePointer);
+	if ((f.readInt() % 2) == 0) {
+		f.writeInt(newValue);
+	}
+	f.close();
+	
+}

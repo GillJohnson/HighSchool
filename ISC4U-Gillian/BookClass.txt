@@ -1,0 +1,86 @@
+public class BookClass {
+
+	//INSTANCE VARIABLES
+	private int pages;
+	private String title;
+	private int pageNumberOn;
+	private boolean bookCompleted;
+	private Author name;
+	
+	
+	//CONSTRUCTORS
+	public BookClass() {
+		this.bookCompleted = false;
+	}
+	
+	public BookClass(int pageNumberOn) {
+		this();
+		this.pageNumberOn = pageNumberOn;
+	}
+
+	
+	//SETTERS & GETTERS
+	public int getPageNumberOn() {
+		return this.pageNumberOn;
+	}
+	
+	public void setPageNumberOn(int pageNumber) {
+		if (pageNumber < 0) {
+			this.pageNumberOn = 0;
+		}
+		else {
+			this.pageNumberOn = pageNumber;
+		}
+	}
+	
+	public int getPages() {
+		return this.pages;
+	}
+	
+	public void setPages(int amount) {
+		if (amount < 0) {
+			this.pages = 0;
+		}
+		else {
+			this.pages = amount;
+		}
+	}
+	
+	public String getTitle() {
+		return this.title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	
+	//HELPER METHOD
+	public int wordCount() {
+		return 200 * this.pages;
+	}
+	
+	
+	// .EQUALS()
+	public boolean equals(BookClass a, BookClass b) {
+		if (a.pages != b.pages) {
+			return false;
+		}
+		if (a.title != b.title) {
+			return false;
+		}
+		if (a.name != b.name) {
+			return false;
+		}
+		return true;
+	}
+	
+	
+	// TOSTRING()
+	public String toString() {
+		String s = name.toString() + ", " + this.title + ", " + this.pages + ", " + this.wordCount();
+		return s;
+	}
+	
+
+}
